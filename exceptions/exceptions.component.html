@@ -1,0 +1,36 @@
+<div class="container-fluid exception-page-container">
+  <div class="col-md-12 col-sm-12 col-xs-12 cc-material-form" style="background-color:white">
+    <div class="row">
+      <div class="col-md-12"> <a class="pull-right" (click)="NavigatetoSettings()">Settings</a></div>
+    </div>
+    <ul class="nav nav-tabs">
+      <li *ngIf="selectedTabid==0" class="active"><a data-toggle="tab" (click)="DisplayMenu(0)">General</a></li>
+      <li *ngIf="selectedTabid!=0"><a data-toggle="tab" (click)="DisplayMenu(0)">General</a></li>
+      <li *ngIf="selectedTabid==1" class="active"><a data-toggle="tab" (click)="DisplayMenu(1)">Create</a></li>
+      <li *ngIf="selectedTabid!=1"><a data-toggle="tab" (click)="DisplayMenu(1)">Create</a></li>
+      <li *ngIf="selectedTabid==2" class="active"><a data-toggle="tab" (click)="DisplayMenu(2)">Update</a></li>
+      <li *ngIf="selectedTabid!=2"><a data-toggle="tab" (click)="DisplayMenu(2)">Update</a></li>
+      <li *ngIf="selectedTabid==3" class="active"><a data-toggle="tab" (click)="DisplayMenu(3)">Archive</a></li>
+      <li *ngIf="selectedTabid!=3"><a data-toggle="tab" (click)="DisplayMenu(3)">Archive</a></li>
+      <li *ngIf="selectedTabid==4" class="active"><a data-toggle="tab" (click)="DisplayMenu(4)">Field Level</a></li>
+      <li *ngIf="selectedTabid!=4"><a data-toggle="tab" (click)="DisplayMenu(4)">Field Level</a></li>
+    </ul>
+    <div class="tab-content">
+    <div class="tab-pane fade in active" *ngIf="selectedTabid==0">
+        <general-exceptions [userName]="userName" [FilterDays]="FilterDays" [AllResponses]="AllResponses"></general-exceptions>
+      </div>
+       <div class="tab-pane fade in active" *ngIf="selectedTabid==1">
+        <create-exceptions [userName]="userName" [FilterDays]="FilterDays" [AllResponses]="AllResponses"></create-exceptions>
+      </div>
+      <div class="tab-pane fade in active" *ngIf="selectedTabid==2">
+        <update-exceptions [userName]="userName" [FilterDays]="FilterDays" [AllResponses]="AllResponses"></update-exceptions>
+      </div>
+       <div class="tab-pane fade in active" *ngIf="selectedTabid==3">
+        <archive-exceptions [userName]="userName" [FilterDays]="FilterDays" [AllResponses]="AllResponses"></archive-exceptions>
+      </div>
+      <div class="tab-pane fade in active" *ngIf="selectedTabid==4">
+        <fieldlevel-exceptions [userName]="userName" [FilterDays]="FilterDays" [AllResponses]="AllResponses"></fieldlevel-exceptions>
+      </div>
+    </div>
+  </div>
+</div>
